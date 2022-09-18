@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 import BackgroundCircle from './BackgroundCircles'
@@ -23,12 +24,27 @@ const Hero = ({} : Props) => {
                 className='relative rounded-full h-32 w-32 mx-auto object-cover'
                 src="https://avatars.githubusercontent.com/u/24982705?v=4"
             />
-            <div>
-                <h2>Software Engineer</h2>
-                <h1>
+            <div className='z-20'>
+                <h2 className='text-sm uppecase text-gray-500 pb-2 tracking[-15px]'>Full Stack Web Developer</h2>
+                <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
                     <span>{text}</span>
                     <Cursor cursorColor='#F7AB0A'/>
                 </h1>
+
+                <div className='pt-5'>
+                    <Link href="#about">
+                        <button className='heroButton'>About</button>
+                    </Link>
+                    <Link href="#experience">
+                        <button className='heroButton'>Experience</button>
+                    </Link>
+                    <Link href="#skills">
+                        <button className='heroButton'>Skills</button>
+                    </Link>
+                    <Link href="#projects">
+                        <button className='heroButton'>Projects</button>
+                    </Link>
+                </div>
             </div>
         </div>
     );
