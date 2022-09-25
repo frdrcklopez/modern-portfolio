@@ -1,10 +1,27 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
+import { useForm, SubmitHandler } from 'react-hook-form'
+
+type Inputs = {
+    name : string,
+    email : string,
+    subject : string,
+    message : string,
+}
 
 type Props = {};
 
 const ContactMe = ({} : Props) => {
+    const { 
+        register, 
+        handleSubmit, 
+        watch, 
+        formState: { errors } 
+    } = useForm<Inputs>();
+
+    const onSubmit : SubmitHandler<Inputs> = (formData) => console.log(formData)
+
     return (
         <motion.div 
             initial={{
@@ -45,14 +62,14 @@ const ContactMe = ({} : Props) => {
                 </div>
 
 
-                <form className='flex flex-col space-y-2 w-fit mx-auto'>
+                <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
                     <div className='flex space-x-2'>
-                        <input type="text" className='contactInput'/>
-                        <input type="text" className='contactInput'/>
+                        <input {...register('name')} type="text" className='contactInput'/>
+                        <input {...register('email')} type="text" className='contactInput'/>
                     </div>
 
-                    <input className='contactInput' type="text"/>
-                    <textarea className="contactInput" />
+                    <input {...register('subject')} className='contactInput' type="text"/>
+                    <textarea {...register('message')} className="contactInput" />
                     <button className="bg-amber-500 py-5 px-10 rounded-md text-black font-bold">Submit</button>
                 </form>
             </div>
