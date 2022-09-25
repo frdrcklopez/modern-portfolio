@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Skill from './Skill'
+import Skill from '../components/Skill'
 
 type Props = {};
 

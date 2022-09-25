@@ -20,7 +20,9 @@ const ContactMe = ({} : Props) => {
         formState: { errors } 
     } = useForm<Inputs>();
 
-    const onSubmit : SubmitHandler<Inputs> = (formData) => console.log(formData)
+    const onSubmit : SubmitHandler<Inputs> = (formData) => {
+        // console.log(formData)
+    }
 
     return (
         <motion.div 
