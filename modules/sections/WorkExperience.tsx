@@ -18,9 +18,9 @@ const WorkExperience = ({} : Props) => {
                 transition={{
                     duration : 1.5
                 }}
-                className='w-full h-full'
+                className='section-container'
             >
-                <div className='h-full w-full flex space-x-5 overflow-x-scroll px-10 snap-x snap-mandatory'>
+                <div className='h-full w-full flex space-x-2 sm:space-x-5 overflow-x-scroll px-5 sm:px-10 snap-x snap-mandatory scrollbar-track-gray-400/20 scrollbar-thumb-amber-500 scrollbar-thin'>
                     {/* ExperienceCard */}
                     <ExperienceCard/>
                     {/* ExperienceCard */}
