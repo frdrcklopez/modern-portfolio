@@ -22,7 +22,7 @@ const Header = ({} : Props) => {
                     transition={{
                         duration : 1.5
                     }}
-                    className='flex flex-row items-center border'
+                    className='flex flex-row items-center'
                 >
                     {/* Social Icons */}
                     <SocialIcon 
@@ -56,7 +56,7 @@ const Header = ({} : Props) => {
                     transition={{
                         duration : 1.5
                     }}
-                    className='flex flex-row items-center text-gray-300 cursor-pointer border'
+                    className='flex flex-row items-center text-gray-300 cursor-pointer'
                 >
                     <SocialIcon
                         className='cursor-pointer'
