@@ -33,7 +33,7 @@ const Home: NextPage<Props> = ({pageInfo, experiences, skills, projects, socials
       </Head>
 
       {/* Header */}
-      <Header/>
+      <Header socials={socials}/>
 
       {/* Hero */}
       <section id="hero" className='snap-start'>
