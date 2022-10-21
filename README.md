@@ -1,5 +1,5 @@
 # Modern Portfolio
-> Modern Portfolio with NextJS, TailwindCSS, Framer Motion, and Sanity.io etc. [In Development]
+> Modern Portfolio with NextJS, TailwindCSS, Framer Motion, and Sanity.io etc. (see demo here[https://modern-portfolio-chi.vercel.app/])
 
 ## Tools and Features
 
