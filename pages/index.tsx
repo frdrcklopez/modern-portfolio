@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Header from '../modules/components/Header'
 import Hero from '../modules/sections/Hero'
@@ -7,8 +7,23 @@ import WorkExperience from '../modules/sections/WorkExperience'
 import Skills from '../modules/sections/Skills'
 import Projects from '../modules/sections/Projects'
 import ContactMe from '../modules/sections/ContactMe'
+import { Experience, PageInfo, Project, Skill, Social } from '../typing'
+import { fetchPageInfo } from '../utils/fetchPageInfo'
+import { fetchExperiences } from '../utils/fetchExperiences'
+import { fetchProjects } from '../utils/fetchProjects'
+import { fetchSkills } from '../utils/fetchSkills'
+import { fetchSocials } from '../utils/fetchSocials'
 
-const Home: NextPage = () => {
+type Props = {
+  pageInfo : PageInfo,
+  experiences : Experience[],
+  skills : Skill[],
+  projects : Project[],
+  socials : Social[],
+}
+
+const Home: NextPage<Props> = ({pageInfo, experiences, skills, projects, socials}) => {
+
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll z-0 scrollbar-track-gray-400/20 scrollbar-thumb-amber-500 scrollbar-thin'>
       <Head>
@@ -18,7 +33,7 @@ const Home: NextPage = () => {
       </Head>
 
       {/* Header */}
-      <Header />
+      <Header/>
 
       {/* Hero */}
       <section id="hero" className='snap-start'>
@@ -55,3 +70,21 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
+
+  return {
+      props : {
+        pageInfo,
+        experiences,
+        skills,
+        projects,
+        socials,
+      }
+  }
+}
