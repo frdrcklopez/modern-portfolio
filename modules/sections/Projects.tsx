@@ -1,17 +1,20 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import SectionFlexBox from '../components/layout/SectionFlexBox'
+import { Project } from '../../typing'
 
-type Props = {};
+type Props = {
+    projects : Project[]
+};
 
-const Projects= ({  } : Props) => {
-    const projects = [1, 2, 3, 4, 5]
+const Projects= ({ projects } : Props) => {
+    const prod = [1, 2, 3, 4, 5]
 
     return (
         <SectionFlexBox title="Projects">
             <motion.div className='section-container'>
                 <div className='relative h-full w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-track-gray-400/20 scrollbar-thumb-amber-500 scrollbar-thin'>
-                    {projects.map((project, i) => (
+                    {prod.map((project, i) => (
                         <div key={i} className='flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center w-full'>
                             <motion.img 
                                 initial={{
@@ -34,7 +37,7 @@ const Projects= ({  } : Props) => {
 
                             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
                                 <h4 className='text-xl sm:text-2xl 2xl:text-4xl font-semibold text-center'> 
-                                    <span className='underline decoration-amber-500'>Case Study { i + 1} of {projects.length}:</span> Ups clone
+                                    <span className='underline decoration-amber-500'>Case Study { i + 1} of {prod.length}:</span> Ups clone
                                 </h4>
 
                                 <p className='text-base lg:text-lg text-center md:text-left px-5'>

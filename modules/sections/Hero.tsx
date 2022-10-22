@@ -1,11 +1,13 @@
 import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
-
 import BackgroundCircle from '../components/BackgroundCircles'
+import { PageInfo } from '../../typing'
 
-type Props = {};
+type Props = {
+    pageinfo : PageInfo
+};
 
-const Hero = ({} : Props) => {
+const Hero = ({ pageinfo } : Props) => {
     const [text, count] = useTypewriter({
         words : [
             "Hi, I'm Frederick Lopez", 

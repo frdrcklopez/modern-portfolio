@@ -1,10 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import SectionFlexBox from '../components/layout/SectionFlexBox'
+import { PageInfo } from '../../typing'
 
-type Props = {};
+type Props = {
+    pageinfo : PageInfo
+};
 
-const About = ({} : Props) => {
+const About = ({ pageinfo } : Props) => {
     return (
         <SectionFlexBox title="About">
             <div className='section-container max-w-7xl'>

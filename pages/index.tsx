@@ -33,31 +33,43 @@ const Home: NextPage<Props> = ({pageInfo, experiences, skills, projects, socials
       </Head>
 
       {/* Header */}
-      <Header socials={socials}/>
+      <Header 
+        socials={socials}
+      />
 
       {/* Hero */}
       <section id="hero" className='snap-start'>
-        <Hero/>
+        <Hero
+          pageinfo={pageInfo}
+        />
       </section>
 
       {/* About */}
       <section id="about" className='snap-center'>
-        <About/>
+        <About
+           pageinfo={pageInfo}
+        />
       </section>
 
       {/* Experience */}
       <section id="experience" className='snap-center'>
-        <WorkExperience/>
+        <WorkExperience
+          experiences={experiences}
+        />
       </section>
 
       {/* Skills */}
       <section id="skills" className='snap-start'>
-        <Skills/>
+        <Skills 
+          skills={skills}
+        />
       </section>
 
       {/* Projects */}
       <section id="projects" className='snap-start'>
-        <Projects/>
+        <Projects
+          projects={projects}
+        />
       </section>
 
       {/* Contact Me */}

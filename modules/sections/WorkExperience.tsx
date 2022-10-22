@@ -2,10 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import SectionFlexBox from '../components/layout/SectionFlexBox'
 import ExperienceCard from '../components/ExperienceCard'
+import { Experience } from '../../typing'
 
-type Props = {};
+type Props = {
+    experiences : Experience[]
+};
 
-const WorkExperience = ({} : Props) => {
+const WorkExperience = ({ experiences } : Props) => {
     return (
         <SectionFlexBox title="Experience">
             <motion.div 

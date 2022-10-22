@@ -2,10 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import SectionFlexBox from '../components/layout/SectionFlexBox'
 import Skill from '../components/Skill'
+import { Skill as Skills } from '../../typing'
 
-type Props = {};
+type Props = {
+    skills : Skills[]
+};
 
-const Skills = ({} : Props) => {
+const Skills = ({ skills } : Props) => {
     return (
         <SectionFlexBox title="Skills">
             <motion.div 
