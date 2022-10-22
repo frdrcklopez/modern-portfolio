@@ -1,6 +1,7 @@
 import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircle from '../components/BackgroundCircles'
+import { urlFor } from '../../sanity'
 import { PageInfo } from '../../typing'
 
 type Props = {
@@ -10,7 +11,7 @@ type Props = {
 const Hero = ({ pageinfo } : Props) => {
     const [text, count] = useTypewriter({
         words : [
-            "Hi, I'm Frederick Lopez", 
+            `Hi, I'm ${pageinfo.name}`, 
             "i-turn-coffee-into-codes.tsx", 
             "<BuildSomethingMore/>"
         ],
@@ -23,10 +24,10 @@ const Hero = ({ pageinfo } : Props) => {
             <BackgroundCircle/>
             <img 
                 className='relative rounded-full h-32 w-32 mx-auto object-cover'
-                src="https://avatars.githubusercontent.com/u/24982705?v=4"
+                src={urlFor(pageinfo?.heroImage).url()}
             />
             <div className='z-20'>
-                <h2 className='text-sm uppecase text-gray-500 pb-2 tracking[-15px]'>Full Stack Web Developer</h2>
+                <h2 className='text-sm uppecase text-gray-500 pb-2 tracking[-15px]'>{pageinfo.role}</h2>
                 <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
                     <span>{text}</span>
                     <Cursor cursorColor='#F7AB0A'/>
